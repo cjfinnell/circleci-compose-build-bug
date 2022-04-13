@@ -17,6 +17,15 @@ jobs:
       - checkout
       - setup_remote_docker
       - run: docker compose build
+  test-stable-prebuild:
+    docker:
+      - image: cimg/base:stable
+    resource_class: small
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run: docker build -t local-hello .
+      - run: docker compose -f prebuild.docker-compose.yml build
 
 
 workflows:
@@ -25,3 +34,4 @@ workflows:
     jobs:
       - test-stable
       - test-current
+      - test-stable-prebuild
