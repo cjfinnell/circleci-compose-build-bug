@@ -1,6 +1,8 @@
 # circleci-compose-build-bug
 Recreating a CircleCI bug: failure to build via docker compose when using a docker executor
 
+[Bug report](https://discuss.circleci.com/t/fail-to-build-images-with-docker-compose/43678)
+
 ## The error
 
 ```
