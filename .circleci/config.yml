@@ -1,9 +1,17 @@
 version: 2.1
 
 jobs:
-  test:
+  test-current:
     docker:
-      - image: cimg/base
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run: docker compose build
+  test-stable:
+    docker:
+      - image: cimg/base:stable
     resource_class: small
     steps:
       - checkout
@@ -15,4 +23,5 @@ workflows:
   version: 2
   ci:
     jobs:
-      - test
+      - test-stable
+      - test-current
