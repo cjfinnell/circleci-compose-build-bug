@@ -1,5 +1,6 @@
 # circleci-compose-build-bug
-Recreating a CircleCI bug: failure to build via docker compose when using a docker executor
+
+Recreating a CircleCI bug: failure to build via docker compose when using a docker executor with version `17.09.0-ce` (current default)
 
 [Bug report](https://discuss.circleci.com/t/fail-to-build-images-with-docker-compose/43678)
 
